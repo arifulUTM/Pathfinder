@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "724191750726",
+    "project_id": "pathfinder-b7e7e",
+    "storage_bucket": "pathfinder-b7e7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724191750726:android:b36351ad57f818ec8e7847",
+        "android_client_info": {
+          "package_name": "com.example.pathfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724191750726-r3ce1m2vkksalvct6045i431td132ght.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKxxqFDP_ts-QIIEvL2IAYq9VAGAFAdCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724191750726-r3ce1m2vkksalvct6045i431td132ght.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
