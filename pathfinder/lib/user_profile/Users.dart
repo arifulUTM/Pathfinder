@@ -5,7 +5,7 @@ class Users {
 
   Users({this.firebase_auth});
 
-  //SignUp with Email and Password
+  // Sign Up with email and password
 
   Future<User> signUp(String email, String password) async {
     try {
@@ -17,11 +17,11 @@ class Users {
     }
   }
 
-// SignIn with Email and Password
+  // Sign In with email and password
 
   Future<User> signIn(String email, String password) async {
     try {
-      var auth = await firebase_auth.createUserWithEmailAndPassword(
+      var auth = await firebase_auth.signInWithEmailAndPassword(
           email: email, password: password);
       return auth.user;
     } catch (e) {
@@ -29,23 +29,21 @@ class Users {
     }
   }
 
-  // SignOut
+  // Sign Out
 
   Future<void> signOut() async {
-    firebase_auth.signOut();
+    await firebase_auth.signOut();
   }
 
-// Check Sign In
-
-  Future<void> checkSignIn() async {
+  // check Sign In
+  Future<bool> isSignedIn() async {
     var currentUser = await firebase_auth.currentUser;
-
     return currentUser != null;
   }
 
-  // get currentUser
+  //get current user
 
-  Future<User> getCurrentUser() async {
+  Future<User> getUser() async {
     return await firebase_auth.currentUser;
   }
 }
