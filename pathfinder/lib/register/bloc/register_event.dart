@@ -7,7 +7,7 @@ abstract class RegisterEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class SingnUpButton extends RegisterEvent {
+class SignUpButton extends RegisterEvent {
   String email, password;
-  SingnUpButton({@required this.email, @required this.password});
+  SignUpButton({@required this.email, @required this.password});
 }

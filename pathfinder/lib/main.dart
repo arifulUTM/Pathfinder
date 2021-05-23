@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AuthBloc(),
+          create: (context) => AuthBloc(users: users),
         ),
         BlocProvider(
-          create: (context) => RegisterBloc(),
+          create: (context) => RegisterBloc(users: users),
         ),
         BlocProvider(
-          create: (context) => LoginBloc(),
+          create: (context) => LoginBloc(users: users),
         ),
       ],
       child: MaterialApp(
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SplashScreen(),
+        home: MainScreen(),
         // BlocProvider(
         //   create: (context) =>
         //       AuthBloc(userRepository: userRepository)..add(AppLoaded()),
@@ -53,6 +53,9 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
+        if (state is AuthInitial) {
+          return SplashScreen();
+        }
         if (state is UnAuthenticateState) {
           return SplashScreen();
         } else if (state is AuthenticateState) {

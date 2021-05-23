@@ -17,8 +17,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   Stream<RegisterState> mapEventToState(
     RegisterEvent event,
   ) async* {
-    // TODO: implement mapEventToState
-    if (event is SingnUpButton) {
+    if (event is SignUpButton) {
       yield RegisterLoading();
       try {
         var user = await users.signUp(event.email, event.password);

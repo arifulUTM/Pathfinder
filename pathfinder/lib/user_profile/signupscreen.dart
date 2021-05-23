@@ -23,77 +23,86 @@ class SignUpScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 })),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // define all states to get current states
-              BlocListener<RegisterBloc, RegisterState>(
-                listener: (context, state) {
-                  if (state is RegisterSucced) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => HomeScreen()));
-                  }
-                },
-                child: BlocBuilder<RegisterBloc, RegisterState>(
-                  builder: (context, state) {
-                    if (state is RegisterLoading) {
-                      return Center(child: CircularProgressIndicator());
-                    } else if (state is RegisterFailed) {
-                      return buildError(state.message);
-                    } else if (state is RegisterSucced) {
-                      return Container();
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // define all states to get current states
+                BlocListener<RegisterBloc, RegisterState>(
+                  listener: (context, state) {
+                    if (state is RegisterSucced) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => HomeScreen()));
                     }
-                    return Container();
                   },
-                ),
-              ),
-              Text(
-                "Fill in the application form",
-                style: TextStyle(fontSize: 20, color: Color(0xFFbc6c25)),
-              ),
-              CustomTextField(
-                hintText: "Email",
-                textInputType: TextInputType.emailAddress,
-                obscureText: false,
-                controller: emailController,
-              ),
-              SizedBox(height: 20),
-              CustomTextField(
-                hintText: "Password",
-                textInputType: TextInputType.visiblePassword,
-                obscureText: true,
-                controller: passwordController,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      signInBtnColor,
-                    ),
+                  child: BlocBuilder<RegisterBloc, RegisterState>(
+                    builder: (context, state) {
+                      if (state is RegisterLoading) {
+                        return Center(child: CircularProgressIndicator());
+                      } else if (state is RegisterFailed) {
+                        return buildError(state.message);
+                      } else if (state is RegisterSucced) {
+                        emailController.text = '';
+                        passwordController.text = '';
+                        return Container();
+                      }
+                      return Container();
+                    },
                   ),
-                  onPressed: () {},
-                  child: Text('Sign Up'),
                 ),
-              ]),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
+                Text(
+                  "Fill in the application form",
+                  style: TextStyle(fontSize: 20, color: Color(0xFFbc6c25)),
+                ),
+                CustomTextField(
+                  hintText: "Email",
+                  textInputType: TextInputType.emailAddress,
+                  obscureText: false,
+                  controller: emailController,
+                ),
+                SizedBox(height: 20),
+                CustomTextField(
+                  hintText: "Password",
+                  textInputType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  controller: passwordController,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                      signInBtnColor,
-                    )),
+                      backgroundColor: MaterialStateProperty.all(
+                        signInBtnColor,
+                      ),
+                    ),
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => SignInScreen()));
+                      registerBloc.add(SignUpButton(
+                        email: emailController.text,
+                        password: passwordController.text,
+                      ));
                     },
-                    child: Text('Sign In'),
+                    child: Text('Sign Up'),
                   ),
-                ],
-              )
-            ],
+                ]),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                        signInBtnColor,
+                      )),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => SignInScreen()));
+                      },
+                      child: Text('Sign In'),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ));
   }

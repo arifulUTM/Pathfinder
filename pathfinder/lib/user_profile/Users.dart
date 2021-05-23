@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Users {
-  FirebaseAuth firebase_auth = FirebaseAuth.instance;
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  Users({this.firebase_auth});
+  Users({this.firebaseAuth});
 
   // Sign Up with email and password
 
   Future<User> signUp(String email, String password) async {
     try {
-      var auth = await firebase_auth.createUserWithEmailAndPassword(
+      var auth = await firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       return auth.user;
     } catch (e) {
@@ -21,7 +21,7 @@ class Users {
 
   Future<User> signIn(String email, String password) async {
     try {
-      var auth = await firebase_auth.signInWithEmailAndPassword(
+      var auth = await firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
       return auth.user;
     } catch (e) {
@@ -32,18 +32,18 @@ class Users {
   // Sign Out
 
   Future<void> signOut() async {
-    await firebase_auth.signOut();
+    await firebaseAuth.signOut();
   }
 
   // check Sign In
   Future<bool> isSignedIn() async {
-    var currentUser = await firebase_auth.currentUser;
+    var currentUser = await firebaseAuth.currentUser;
     return currentUser != null;
   }
 
   //get current user
 
   Future<User> getUser() async {
-    return await firebase_auth.currentUser;
+    return await firebaseAuth.currentUser;
   }
 }
