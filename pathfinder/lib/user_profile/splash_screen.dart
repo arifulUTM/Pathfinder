@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pathfinder/constants/color_helper.dart';
+import 'package:pathfinder/user_profile/sign_in_screen.dart';
+import 'package:pathfinder/user_profile/signupscreen.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -30,20 +33,26 @@ class _SplashScreenState extends State<SplashScreen> {
                     ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                          Color(0XFFff5c8a),
+                          signInBtnColor,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => SignInScreen()));
+                      },
                       child: Text('Sign In'),
                     ),
                     SizedBox(height: 15),
                     ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                          Color(0xFFff7b00),
+                          signUpBtnColor,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => SignUpScreen()));
+                      },
                       child: Text('Sign Up'),
                     ),
                   ],
