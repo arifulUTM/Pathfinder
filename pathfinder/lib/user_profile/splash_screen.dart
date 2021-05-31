@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pathfinder/constants/color_helper.dart';
-import 'package:pathfinder/user_profile/sign_in_screen.dart';
-import 'package:pathfinder/user_profile/signupscreen.dart';
+import 'package:pathfinder/SignIn/signin.dart';
+import 'package:pathfinder/signup/signup.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);

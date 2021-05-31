@@ -38,6 +38,11 @@ dependencies:
   geolocator: ^7.0.3
   google_maps_flutter: ^2.0.5
   provider: ^5.0.0
+  font_awesome_flutter: ^9.0.0
+  geoflutterfire: ^3.0.0-nullsafety.4
+  location: ^4.1.1
+  kf_drawer: ^1.1.2
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:
