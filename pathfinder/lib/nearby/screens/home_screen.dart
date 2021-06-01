@@ -3,12 +3,12 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:pathfinder/nearby/blocs/application_bloc.dart';
 
-class HomeeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeeScreenState createState() => _HomeeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeeScreenState extends State<HomeeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final applicationBloc = Provider.of<Applicationbloc>(context);
@@ -30,8 +30,9 @@ class _HomeeScreenState extends State<HomeeScreen> {
                       myLocationButtonEnabled: true,
                       initialCameraPosition: CameraPosition(
                           target: LatLng(
-                              applicationBloc.currentLocation.latitude,
-                              applicationBloc.currentLocation.longitude),
+                            applicationBloc.currentLocation.latitude,
+                            applicationBloc.currentLocation.longitude,
+                          ),
                           zoom: 14)),
                 ),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:pathfinder/drawer/home_form.dart';
+import 'package:pathfinder/drawer/drawer.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,14 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pathfiner',
-      debugShowCheckedModeBanner: false,
+      title: 'Pathfinder',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData.dark(),
-      home: const HomeForm(),
+      home: SidebarPage(),
     );
   }
 }

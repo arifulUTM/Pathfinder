@@ -43,6 +43,12 @@ dependencies:
   location: ^4.1.1
   kf_drawer: ^1.1.2
   http: ^0.13.3
+  shrink_sidemenu: ^1.0.0+3
+  liquid_ui: ^1.0.0+9
+  rxdart: ^0.27.1
+  curved_animation_controller: ^1.1.0+1
+  collapsible_sidebar: ^2.0.0
+  flutter_advanced_drawer: ^1.2.0
 
 dev_dependencies:
   flutter_test:

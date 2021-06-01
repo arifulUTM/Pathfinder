@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  collapsible_sidebar:
+    dependency: "direct main"
+    description:
+      name: collapsible_sidebar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   collection:
     dependency: transitive
     description:
@@ -85,6 +92,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  curved_animation_controller:
+    dependency: "direct main"
+    description:
+      name: curved_animation_controller
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0+1"
   drawer_swipe:
     dependency: "direct main"
     description:
@@ -153,6 +167,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_advanced_drawer:
+    dependency: "direct main"
+    description:
+      name: flutter_advanced_drawer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   flutter_bloc:
     dependency: "direct main"
     description:
@@ -261,6 +282,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.2"
+  liquid_ui:
+    dependency: "direct main"
+    description:
+      name: liquid_ui
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+9"
   location:
     dependency: "direct main"
     description:
@@ -339,12 +367,19 @@ packages:
     source: hosted
     version: "5.0.0"
   rxdart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.0"
+    version: "0.27.1"
+  shrink_sidemenu:
+    dependency: "direct main"
+    description:
+      name: shrink_sidemenu
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+3"
   sky_engine:
     dependency: transitive
     description: flutter
