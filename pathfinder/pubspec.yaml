@@ -49,6 +49,8 @@ dependencies:
   curved_animation_controller: ^1.1.0+1
   collapsible_sidebar: ^2.0.0
   flutter_advanced_drawer: ^1.2.0
+  carousel_slider: ^3.0.0
+  kt_drawer_menu: ^0.0.6
 
 dev_dependencies:
   flutter_test:

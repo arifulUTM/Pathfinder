@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   characters:
     dependency: transitive
     description:
@@ -282,6 +289,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.2"
+  kt_drawer_menu:
+    dependency: "direct main"
+    description:
+      name: kt_drawer_menu
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   liquid_ui:
     dependency: "direct main"
     description:

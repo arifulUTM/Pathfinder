@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:pathfinder/currency_converter/currency.dart';
+import 'package:pathfinder/slider/slider.dart';
 
 class SidebarPage extends StatefulWidget {
   @override
@@ -64,7 +65,6 @@ class _SidebarPageState extends State<SidebarPage> {
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     color: Colors.black26,
-                    shape: BoxShape.circle,
                   ),
                   child: Image.asset(
                     'assets/images/malaysia.jpg',
@@ -91,7 +91,12 @@ class _SidebarPageState extends State<SidebarPage> {
                 ListTile(
                   onTap: () {},
                   leading: Icon(Icons.settings),
-                  title: Text('Settings'),
+                  title: Text('Nearby'),
+                ),
+                ListTile(
+                  onTap: () {},
+                  leading: Icon(Icons.settings),
+                  title: Text('Covid Nearby Contact'),
                 ),
                 Spacer(),
                 DefaultTextStyle(
