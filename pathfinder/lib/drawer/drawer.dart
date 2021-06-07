@@ -89,9 +89,12 @@ class _SidebarPageState extends State<SidebarPage> {
                   title: Text('Currency Converter'),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Currency()));
+                  },
                   leading: Icon(Icons.settings),
-                  title: Text('Nearby'),
+                  title: Text('Nearby Resutants'),
                 ),
                 ListTile(
                   onTap: () {},

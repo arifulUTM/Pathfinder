@@ -80,7 +80,7 @@ class _HomeFormState extends State<HomeForm>
                             ),
                           ),
                           const Text(
-                            'Improve your language skill\nby selecting one of the following languages',
+                            'A Travel Guide Mobile Application',
                             style: TextStyle(
                                 fontSize: 17, fontStyle: FontStyle.italic),
                           )

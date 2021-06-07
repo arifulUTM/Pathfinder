@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pathfinder/currency_converter/currency.dart';
+import 'package:pathfinder/resturants/nearby_resturants.dart';
 
 class DrawerData extends StatelessWidget {
   const DrawerData();
@@ -29,30 +30,48 @@ class DrawerData extends StatelessWidget {
             ),
             ListTile(
               onTap: () {},
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-            ),
-            ListTile(
-              onTap: () {},
               leading: Icon(Icons.account_circle_rounded),
               title: Text('Profile'),
             ),
             ListTile(
               onTap: () {},
-              leading: Icon(Icons.money),
-              title: Text('Currency Converter'),
+              leading: Icon(Icons.directions),
+              title: Text('Travel Guide'),
+            ),
+            ListTile(
+              onTap: () {},
+              leading: Icon(Icons.contactless_outlined),
+              title: Text('Contact Tracing'),
+            ),
+            ListTile(
+              onTap: () {},
+              leading: Icon(Icons.ac_unit),
+              title: Text('Covid Traker'),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Resturants()));
+              },
+              leading: Icon(Icons.add_location_alt_outlined),
+              title: Text('Nearby'),
+            ),
+            ListTile(
+              onTap: () {},
+              leading: Icon(Icons.add_location_alt_outlined),
+              title: Text('Nearby Resturants'),
             ),
             ListTile(
               onTap: () {},
               leading: Icon(Icons.settings),
-              title: Text('Nearby'),
+              title: Text('Travel Blog'),
             ),
             ListTile(
               onTap: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => Currency()));
               },
-              leading: Icon(Icons.settings),
+              leading: Icon(Icons.money),
               title: Text('Currency Converter'),
             ),
             const Divider(
